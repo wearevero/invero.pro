@@ -2,7 +2,9 @@
 dist/
 
 # VS code
-.vscode/
+.vscode/*
+
+.vercel/*
 
 # generated types
 .astro/
