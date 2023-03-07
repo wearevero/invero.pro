@@ -1,12 +1,21 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel/static";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
+import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://invero-pro.now.sh',
-  output: "server",
-  adapter: vercel(),
-  integrations: [sitemap(({ customPages: ['https://invero-pro.now.sh'] })), prefetch()],
+  site: "https://invero-pro.now.sh",
+  output: "static",
+  adapter: vercel({
+    analytics: true,
+  }),
+  integrations: [
+    sitemap({
+      customPages: ["https://invero-pro.now.sh"],
+    }),
+    prefetch(),
+    svelte(),
+  ],
 });
