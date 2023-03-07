@@ -1,5 +1,6 @@
 {
-  "name": "invero.pro",
+  "name": "@wearevero/invero.pro",
+  "license": "MIT",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,9 +8,25 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "format": "prettier --w .",
+    "husky": "pretty-quick",
     "astro": "astro"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "dependencies": {
+    "@astrojs/prefetch": "^0.1.2",
+    "@astrojs/sitemap": "^1.1.0",
+    "@astrojs/vercel": "^3.1.4",
     "astro": "^2.0.18"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4",
+    "prettier-plugin-astro": "^0.8.0",
+    "pretty-quick": "^3.1.3"
   }
 }
